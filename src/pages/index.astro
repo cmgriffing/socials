@@ -1,4 +1,55 @@
 ---
+import { buttonVariants } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import '@/styles/globals.css'
+import clsx from 'clsx'
+import TwitterIcon from '@/components/icons/twitter.astro'
+import TwitchIcon from '@/components/icons/twitch.astro'
+import YoutubeIcon from '@/components/icons/youtube.astro'
+import LinkedInIcon from '@/components/icons/linkedin.astro'
+import GitHubIcon from '@/components/icons/github.astro'
+import BloggerIcon from '@/components/icons/blogger.astro'
+
+const socialLinks = [
+	{
+		name: "YouTube",
+		href: "https://www.youtube.com/@cmgriffing",
+		icon: YoutubeIcon,
+		styling: "!bg-[#FF0000] !text-white",
+	},
+  {
+		name: "Twitter",
+		href: "https://x.com/cmgriffing",
+		icon: TwitterIcon,
+		styling: "bg-[#1da1f2] text-white",
+	},
+	{
+		name: "Twitch",
+		href: "https://twitter.com/cmgriffing",
+		icon: TwitchIcon,
+		styling: "!bg-[#6441a5] text-white",
+	},
+	{
+		name: "LinkedIn",
+		href: "https://www.linkedin.com/in/cmgriffing/",
+		icon: LinkedInIcon,
+		styling: "!bg-[#0a66c2] text-white",
+	},
+	{
+		name: "GitHub",
+		href: "https://github.com/cmgriffing",
+		icon: GitHubIcon,
+		styling: "bg-black text-white",
+	},
+	{
+		name: "Blog",
+		href: "https://chrisgriffing.com",
+		icon: BloggerIcon,
+		styling: "!bg-[#eee] !text-black border-black border-1",
+	},
+]
+
+
 
 ---
 
@@ -8,9 +59,33 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>cmgriffing Social Links</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+
+		<div class="flex flex-col items-center justify-center h-screen">
+			<Card className="max-w-80 p-8">
+				<h1 class="text-3xl font-bold">cmgriffing </h1>
+				<span class="text-lg text-slate-500">Chris Griffing</span>
+
+				<p class="mt-4 mb-8">I just like building things. Follow me on any of these platforms to see what I'm up to!</p>
+
+				<ul class="flex flex-col gap-4">
+					{socialLinks.map((link) => (
+					<li>
+						<a class={clsx(buttonVariants({}), "w-full", link.styling)} href={link.href} target="_blank" rel="noreferrer">
+							<span class="mr-2">
+								<link.icon className="w-6 h-6" />
+							</span>
+							{link.name}
+						</a>
+					</li>
+					))}
+
+
+				</ul>
+			</Card>
+		</div>
+
 	</body>
 </html>
