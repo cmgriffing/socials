@@ -9,6 +9,7 @@ import YoutubeIcon from "@/components/icons/youtube.astro";
 import LinkedInIcon from "@/components/icons/linkedin.astro";
 import GitHubIcon from "@/components/icons/github.astro";
 import BloggerIcon from "@/components/icons/blogger.astro";
+import BlueskyIcon from "@/components/icons/bluesky.astro";
 
 const socialLinks = [
   {
@@ -18,10 +19,10 @@ const socialLinks = [
     styling: "!bg-[#FF0000] !text-white",
   },
   {
-    name: "Twitter",
-    href: "https://x.com/cmgriffing",
-    icon: TwitterIcon,
-    styling: "bg-[#1da1f2] text-white",
+    name: "BlueSky",
+    href: "https://bsky.app/profile/cmgriffing.bsky.social",
+    icon: BlueskyIcon,
+    styling: "!bg-[#1185fe] !text-white",
   },
   {
     name: "Twitch",
@@ -47,6 +48,12 @@ const socialLinks = [
     icon: BloggerIcon,
     styling:
       "!bg-[#eee] !text-[#dd5424] border-[#dd5424] border-[2px] border-solid",
+  },
+  {
+    name: "Twitter",
+    href: "https://x.com/cmgriffing",
+    icon: TwitterIcon,
+    styling: "bg-[#1da1f2] text-white",
   },
 ];
 ---
